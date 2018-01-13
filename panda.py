@@ -1,4 +1,3 @@
-import json
 import logging
 import discord.ext.commands as commands
 
@@ -10,11 +9,9 @@ handler.setFormatter(logging.Formatter('{asctime}:{levelname}:{name}:{message}',
 rlog.addHandler(handler)
 
 # Get the token
-with open('conf.json') as fp:
-    conf = json.load(fp)
 
 # Complicated bot creation
-bot = commands.Bot(commands.when_mentioned_or(conf['prefix']), description='Never say no to Panda.')
+bot = commands.Bot(commands.when_mentioned_or(prefix), description='Never say no to Panda.')
 bot.load_extension('music')
 
 # For when the bot is shitting itself
@@ -30,4 +27,4 @@ async def reload(ctx):
     await ctx.message.add_reaction('\N{WHITE HEAVY CHECK MARK}')
 
 # Let's rock ! (and roll, because panda are round and fluffy)
-bot.run(conf['token'])
+bot.run(token)
