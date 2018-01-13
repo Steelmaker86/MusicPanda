@@ -30,4 +30,4 @@ async def reload(ctx):
     await ctx.message.add_reaction('\N{WHITE HEAVY CHECK MARK}')
 
 # Let's rock ! (and roll, because panda are round and fluffy)
-bot.run(conf['token'])
+bot.run(token)
